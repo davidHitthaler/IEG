@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace BlackFriday
+namespace ProductCatalogService
 {
     public class Program
     {
@@ -22,7 +22,5 @@ namespace BlackFriday
                 .UseApplicationInsights()
                 .UseStartup<Startup>()
                 .Build();
-               
     }
 }
-

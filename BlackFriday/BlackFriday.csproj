@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <UserSecretsId>cb84e938-87c3-4600-bb76-47401184c1a1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +17,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductCatalogService\ProductCatalogService.csproj" />
   </ItemGroup>
 
 </Project>

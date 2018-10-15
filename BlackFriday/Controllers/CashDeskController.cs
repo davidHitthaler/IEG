@@ -17,7 +17,8 @@ namespace BlackFriday.Controllers
     {
 
         private readonly ILogger<CashDeskController> _logger;
-        private static readonly string creditcardServiceBaseAddress="http://iegeasycreditcardservice.azurewebsites.net/";
+        //private static readonly string creditcardServiceBaseAddress="http://iegeasycreditcardservice.azurewebsites.net/";
+        private static readonly string creditcardServiceBaseAddress = "http://localhost:56093/";
 
         public CashDeskController(ILogger<CashDeskController> logger)
         {
@@ -29,13 +30,12 @@ namespace BlackFriday.Controllers
 
             return new string[] { "value1", "value2" };
         }
-        [HttpGet]
+        /*[HttpGet]
         public string Get(int id)
         {
 
             return "value" + id;
-        }
-
+        }*/
 
         [HttpPost]
         public IActionResult Post([FromBody]Basket basket)
