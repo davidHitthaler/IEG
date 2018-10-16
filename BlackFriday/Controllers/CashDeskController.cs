@@ -56,8 +56,7 @@ namespace BlackFriday.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpResponseMessage response =  client.PostAsJsonAsync(creditcardServiceBaseAddress + "/api/CreditcardTransactions", creditCardTransaction).Result;
             response.EnsureSuccessStatusCode();
-           
-            
+
             return CreatedAtAction("Get", new { id = System.Guid.NewGuid() });
         }
     }

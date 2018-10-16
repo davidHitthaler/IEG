@@ -32,9 +32,6 @@ namespace BlackFriday.Controllers
             client.BaseAddress = new Uri(creditcardServiceBaseAddress);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-
-
             HttpResponseMessage response = client.GetAsync(creditcardServiceBaseAddress+ "/api/AcceptedCreditCards").Result;
             if (response.IsSuccessStatusCode)
             {

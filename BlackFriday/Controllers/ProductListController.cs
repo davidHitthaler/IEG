@@ -63,7 +63,6 @@ namespace BlackFriday.Controllers
             /*foreach (var item in getProduct)
             {
                 _logger.LogError("Paymentmethod {0}", new object[] { item });
-
             }*/
             return getProductwithId;
         }
@@ -86,7 +85,6 @@ namespace BlackFriday.Controllers
             /*foreach (var item in getProduct)
             {
                 _logger.LogError("Paymentmethod {0}", new object[] { item });
-                d
             }*/
             //return getProduct;
         }
