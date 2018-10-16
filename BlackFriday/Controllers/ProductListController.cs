@@ -68,28 +68,27 @@ namespace BlackFriday.Controllers
             return getProductwithId;
         }
 
-        /*[HttpPost()]
-        public List<ProductModel> Post()
+        [HttpPost()]
+        public IActionResult Post([FromBody] ProductModel productModel)
         {
-            List<ProductModel> getProductwithId = new List<ProductModel>();
+            //check model state!... if (ModelState.IsValid == false) error else do...
+            ProductModel postThisObject = new ProductModel(productModel.ProductId, productModel.ProductPublisher, productModel.ProductName, productModel.ProductPrice);            
+            //List<ProductModel> getProduct = new List<ProductModel>();
             //getProduct.Add(new ProductModel() {ProductId =09, ProductPublisher="Apple", ProductName="Mac",ProductPrice=2500 });
             //return getProduct;
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(productCatalogServiceBaseAddress);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.GetAsync(productCatalogServiceBaseAddress + "/api/ProductCatalog").Result;
-            if (response.IsSuccessStatusCode)
-            {
-                getProductwithId = response.Content.ReadAsAsync<List<ProductModel>>().Result;
-            }
-
+            HttpResponseMessage response = client.PostAsJsonAsync(productCatalogServiceBaseAddress + "/api/ProductCatalog", postThisObject).Result;
+                //getProduct = response.Content.ReadAsAsync<List<ProductModel>>().Result;
+            return CreatedAtAction("Post ProductList: ", new { code = response.StatusCode });          
             /*foreach (var item in getProduct)
             {
                 _logger.LogError("Paymentmethod {0}", new object[] { item });
                 d
-            }
-            return getProductwithId;
-        }*/
+            }*/
+            //return getProduct;
+        }
     }
 }
