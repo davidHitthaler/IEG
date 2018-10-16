@@ -12,6 +12,7 @@ namespace ProductCatalogService
 {
     public class Program
     {
+        //hier ist ein test
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
