@@ -67,7 +67,7 @@ namespace BlackFriday.Controllers
             return getProductwithId;
         }
 
-        [HttpPost()]
+        [HttpPost()]//Compiles no errors but don't work in practices... Who searches the error?;-)
         public IActionResult Post([FromBody] ProductModel productModel)
         {
             //check model state!... if (ModelState.IsValid == false) error else do...

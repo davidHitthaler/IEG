@@ -1,0 +1,53 @@
+{
+	"Productlist": [{
+		"ProductID": "1",
+		"Product": "Apple",
+		"ProductName": "IPhone X",
+		"Price": "1200"
+	}, {
+		"ProductID": "2",
+		"Product": "Samsung",
+		"ProductName": "Samsung Galaxy S9",
+		"Price": "700"
+	}, {
+		"ProductID": "3",
+		"Product": "Nokia",
+		"ProductName": "Nokia 7 Plus",
+		"Price": "370"
+	}, {
+		"ProductID": "4",
+		"Product": "Xiaomi",
+		"ProductName": "Xiaomi Redmi 5",
+		"Price": "160"
+	}, {
+		"ProductID": "5",
+		"Product": "LG",
+		"ProductName": "LG G7",
+		"Price": "350"
+	}, {
+		"ProductID": "6",
+		"Product": "Apple",
+		"ProductName": "Iphone 8",
+		"Price": "520"
+	}, {
+		"ProductID": "7",
+		"Product": "Samsung",
+		"ProductName": "Samsung J7",
+		"Price": "200"
+	}, {
+		"ProductID": "8",
+		"Product": "Nikon",
+		"ProductName": "Nikon D5600",
+		"Price": "445"
+	}, {
+		"ProductID": "9",
+		"Product": "Huawei",
+		"ProductName": "Huawei P20",
+		"Price": "600"
+	}, {
+		"ProductID": "10",
+		"Product": "Apple",
+		"ProductName": "IPad 6th gen",
+		"Price": "350"
+	}]
+}

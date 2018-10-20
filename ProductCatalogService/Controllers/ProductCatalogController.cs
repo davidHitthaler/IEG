@@ -39,15 +39,6 @@ namespace ProductCatalogService.Controllers
         }
 
         /*[HttpPost]
-        public IActionResult Post([FromBody] ProductModel productModel)
-        {
-            if (ModelState.IsValid == false)
-                return BadRequest(ModelState);
-            else
-                _productStorage.Add(productModel);
-            return CreatedAtAction("Get", new { id = productModel.ProductId });
-        }*/
-        /*[HttpPost]
         public IActionResult Post([FromBody]CreditcardTransaction creditcardTransaction)
         {
             _logger.LogError("TransactionInfo Number: {0} Amount:{1} Receiver: {2}", new object[] { creditcardTransaction.CreditcardNumber, creditcardTransaction.Amount,creditcardTransaction.ReceiverName });

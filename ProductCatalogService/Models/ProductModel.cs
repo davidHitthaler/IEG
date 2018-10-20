@@ -21,10 +21,7 @@ namespace IEGProductCatalogService.Models
 
         public ProductModel()
         {
-            ProductId = 01;
-            ProductPublisher = "Best Producer";
-            ProductName = "BestProduct";
-            ProductPrice = 1;
+            ProductId = 01;ProductPublisher = "Best Producer";ProductName = "BestProduct"; ProductPrice = 1;
         }
 
         public int ProductId { get; set; }
