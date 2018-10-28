@@ -38,32 +38,6 @@ namespace ProductCatalogService.Controllers
             return CreatedAtAction("Product Added, ID = ", new { id = productModel.ProductId });
         }
 
-        /*[HttpPost]
-        public IActionResult Post([FromBody] ProductModel productModel)
-        {
-            if (ModelState.IsValid == false)
-                return BadRequest(ModelState);
-            else
-                _productStorage.Add(productModel);
-            return CreatedAtAction("Get", new { id = productModel.ProductId });
-        }*/
-        /*[HttpPost]
-        public IActionResult Post([FromBody]CreditcardTransaction creditcardTransaction)
-        {
-            _logger.LogError("TransactionInfo Number: {0} Amount:{1} Receiver: {2}", new object[] { creditcardTransaction.CreditcardNumber, creditcardTransaction.Amount,creditcardTransaction.ReceiverName });
-            return CreatedAtAction("Get", new { id = System.Guid.NewGuid() });
-        }*/
-
-        /*// PUT: api/Product/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-        
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }*/
+       
     }
 }
