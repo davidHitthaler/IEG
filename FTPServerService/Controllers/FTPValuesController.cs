@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FTPServerService.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class FTPValuesController : Controller
     {
         // GET api/values
         [HttpGet]
@@ -17,7 +17,7 @@ namespace FTPServerService.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
+ /*       [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
@@ -39,6 +39,6 @@ namespace FTPServerService.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
+        }*/
     }
 }
