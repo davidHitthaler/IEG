@@ -32,7 +32,7 @@ namespace IEGProductCatalogService.Repositories
             }
             catch (WebException e)
             {
-                Console.WriteLine("Cannot download data from url");
+                Console.WriteLine("Cannot download data from url " + e);
                 // Do something such as log error, but this is based on OP's original code
                 // so for now we do nothing.
             }
