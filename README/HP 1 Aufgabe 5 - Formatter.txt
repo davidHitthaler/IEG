@@ -1,0 +1,32 @@
+
+
+1. Führe das Projekt aus und benutze eines der folgenden Tools (Fiddler und Swagger oder Postman):
+Method: Get   	
+URL:    http://localhost:62280/api/PaymentService
+Header:  Accept: text/xml
+	 Accept: text/json	
+	 Accept: text/csv	
+
+GET FUNKTIONIERT!
+
+MEthod: POST
+URL:    http://localhost:62280/api/PaymentService
+Header:  Accept: text/xml
+	 Accept: text/json	
+	 Accept: text/csv
+Body:
+  {
+        "paymentId": 10,
+        "paymentArt": "asdf",
+        "paymentBank": "Sparkasdfasse",
+        "paymentLand": "ddds"
+    }
+oder 1,kasse,karte, graz
+oder <PaymentModel>
+        <PaymentId>1</PaymentId>
+        <PaymentArt>Kreditkarte</PaymentArt>
+        <PaymentBank>Sparkasse</PaymentBank>
+        <PaymentLand>Österreich</PaymentLand>
+    </PaymentModel>
+
+POST FUNKTIONIERT NOCH NICHT!
