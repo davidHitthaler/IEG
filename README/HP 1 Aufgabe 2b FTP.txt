@@ -1,0 +1,21 @@
+1.  FileZilla Server herunterladen: https://filezilla-project.org/ => install mit Port 14147
+    Host: localhost
+    port: 14147
+    => connect
+		
+2.  FileZilla Server -> Edit -> Users -> General -> Add -> Add user account: "ieg1"
+    -> password: "ieg1" -> Shared folders: einen Lokalen Folder erstellen => unter files Berechtigungen anhaken
+
+3. Mit FileZilla Client testen (Ordner erstellen/löschen, Dokument erstellen/löschen): 
+	Host: localhost
+	Username: ieg1
+	Password: ieg1
+	Port: 21 (FTP-Port)
+	
+4. In den lokalen Folder das JSON-File (productlist_json.json) kopieren 
+
+5. In Fiddler testen unter: http://localhost:7826/api/FTPReadout/
+
+6. Tests die erfolgreich sein müssen (Fiddler und Swagger):
+    http://localhost:7826/api/FTPReadout/1  --> z.B. 1. Funktioniert für 1-10
+    http://localhost:7826/api/FTPReadout/11 --> leer, kein Inhalt

@@ -1,0 +1,8 @@
+1.  Neuer MS bietet Produktliste "ProductList" an.
+2.  Laut Aufgabenstellung nur Get - Methoden gefordert. --> Liste hardcodiert hinterlegt.
+3.  Liste kann über Funktionen vom MS "Black Friday" als API aufgerufen werden.
+
+4.  Tests die erfolgreich sein müssen (Fiddler und Swagger):
+    http://localhost:55983/api/ProductCatalog     --> liefert die Liste aller Produkte zurück.
+    http://localhost:55983/api/ProductCatalog/1   --> z.B. 1. Funktioniert für 1-10
+    http://localhost:55983/api/ProductCatalog/11  --> leer, kein Inhalt, leerer Body wird zurückgegeben;
