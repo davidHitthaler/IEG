@@ -64,6 +64,7 @@ namespace IEGProductCatalogService.Repositories
 
         public FTPProductModel Get(int productId)
         {
+            jsonParse();
             return _products.Where(p => p.ProductId == productId).SingleOrDefault();
         }        
 
