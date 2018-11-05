@@ -40,7 +40,7 @@ namespace BlackFriday.Controllers
 
                client = new HttpClient();
                if (retryCount == 1)
-                   client.BaseAddress = new Uri(creditcardServiceBaseAddress_2);
+                   client.BaseAddress = new Uri(creditcardServiceBaseAddress_2+"1");
                else
                    client.BaseAddress = new Uri(creditcardServiceBaseAddress_3);
 
@@ -49,10 +49,10 @@ namespace BlackFriday.Controllers
             var fallbackPolicy = Policy.HandleResult<HttpResponseMessage>(
                  r => r.StatusCode == HttpStatusCode.InternalServerError)
             .FallbackAsync(new HttpResponseMessage(HttpStatusCode.OK)
-             {
-              // _logger.LogWarning("falild");
+            {
+                Content = new StringContent("Please Try again later")
 
-        });
+            });
             var retryWithFallback = fallbackPolicy.WrapAsync(retryPolicy);
 
 
@@ -66,8 +66,10 @@ namespace BlackFriday.Controllers
             if (response.IsSuccessStatusCode)//Status Code is always 404
             {
                 acceptedPaymentMethods = await response.Content.ReadAsStringAsync();
+                return new string[] { acceptedPaymentMethods ,"BaseAdress 3 works"};
             }
-            return new string[] { "value1", "value2" };
+            else
+            return new string[] { "Service is not avaliable Try again later" };
         }
 
     }
