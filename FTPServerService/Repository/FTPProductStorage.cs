@@ -58,12 +58,14 @@ namespace IEGProductCatalogService.Repositories
 
         public IEnumerable<FTPProductModel> Get()
         {
+            _products.Clear();
             jsonParse();
             return _products;
         }
 
         public FTPProductModel Get(int productId)
         {
+            _products.Clear();
             jsonParse();
             return _products.Where(p => p.ProductId == productId).SingleOrDefault();
         }        
