@@ -7,7 +7,7 @@ namespace IEGPaymentService.Models
 {
     public class PaymentModel
     {
-        public PaymentModel()
+        /*public PaymentModel()
         {
             PaymentId = 1;
             PaymentBank = "Sparkasse";
@@ -21,7 +21,7 @@ namespace IEGPaymentService.Models
             paymentArt = PaymentArt;
             paymentBank = PaymentBank;
             paymentLand = PaymentLand;
-        }
+        }*/
 
         public int PaymentId { get; set; }
         [System.ComponentModel.DataAnnotations.MinLength(2)]
