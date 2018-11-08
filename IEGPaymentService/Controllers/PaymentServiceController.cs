@@ -28,11 +28,11 @@ namespace PaymentService.Controllers
 
 
         [HttpPost]
-        public IActionResult Post([FromBody] PaymentModel paymentModel) //TODO Datatyp return value
+        public IEnumerable<PaymentModel> Post([FromBody] PaymentModel paymentModel) //TODO Datatyp return value
         { 
             _paymentStorage.Add(paymentModel);
-            return CreatedAtAction("Payment Added, ID = ", new { id = paymentModel.PaymentId });
-            //return _paymentStorage.Get(); //IEnumerable<PaymentModel>
+            //return CreatedAtAction("Payment Added, ID = ", new { id = paymentModel.PaymentId });//IActionResult
+            return _paymentStorage.Get(); //IEnumerable<PaymentModel>
         }
     }
 }

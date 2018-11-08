@@ -28,6 +28,7 @@ namespace BlackFriday.Controllers
         {
             List<string> acceptedPaymentMethods = null;//= new string[] { "Diners", "Master" };
             _logger.LogError("Accepted Paymentmethods");
+            _logger.LogInformation("you called a get");
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(creditcardServiceBaseAddress);
             client.DefaultRequestHeaders.Accept.Clear();
