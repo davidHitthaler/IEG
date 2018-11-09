@@ -1,0 +1,19 @@
+HP 1 Aufgabe 2a ProductList:
+ -- Fertig (Sollte jemand was auffallen, melden und hier dokumentieren!)
+
+HP 1 Aufgabe 2b FTP:
+ -- Fertig (Sollte jemand was auffallen, melden und hier dokumentieren!)
+
+HP 1 Aufgabe 3a RetryLogic and Fallback:
+
+HP 1 Aufgabe 3b Logging: 
+ -- Fertig (Sollte jemand was auffallen, melden und hier dokumentieren!)
+
+HP 1 Aufgabe 5 Formatter:
+ --> CSV fehlt noch. Akram bitte genauer beschreiben, danke!
+HP 1 Aufgabe 7 Webhooks:
+ --> Ist noch nicht im Master und offen
+
+
+Generell laut Grabner: 
+ --> Singelton bei den Posts?
