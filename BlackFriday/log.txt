@@ -1,0 +1,14 @@
+09.11.2018 14:50:44, TYPE: Information, WHO: BlackFriday:PaymentMethodsController, MESSAGE: HttpGet started
+
+09.11.2018 14:50:45, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Start with Alternative 1
+
+09.11.2018 14:50:45, TYPE: Error      , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 1 is not reachable or false URL given...
+
+09.11.2018 14:50:47, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Start with Alternative 2
+
+09.11.2018 14:50:47, TYPE: Error      , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 2 is not reachable or false URL given...
+
+09.11.2018 14:50:50, TYPE: Information, WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 3 is reachable
+
+09.11.2018 14:50:50, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Rout 1 and 2 are not reachable
+

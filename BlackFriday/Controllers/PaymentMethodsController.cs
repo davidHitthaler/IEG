@@ -9,6 +9,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Polly;
 using System.Net;
+using System.Text;
+using System.IO;
 
 namespace BlackFriday.Controllers
 {
@@ -27,11 +29,14 @@ namespace BlackFriday.Controllers
         {
             _logger = logger;
         }
+
         [HttpGet]
         public async Task<IEnumerable<string>> Get()
         {
             HttpClient client = new HttpClient();
-        //old code before retry logic START
+            LoggingFunction("HttpGet started", "Information", "BlackFriday:PaymentMethodsController");
+
+            //old code before retry logic START
             /*client.BaseAddress = new Uri(creditcardServiceBaseAddress);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -43,7 +48,7 @@ namespace BlackFriday.Controllers
           
             foreach (var item in acceptedPaymentMethods)
             */
-          //old code before retry logic END
+            //old code before retry logic END
             client.BaseAddress = new Uri(creditcardServiceBaseAddress + "fehlerhaft");
 
             var retryPolicy = Policy
@@ -53,9 +58,17 @@ namespace BlackFriday.Controllers
 
                client = new HttpClient();
                if (retryCount == 1)
-                   client.BaseAddress = new Uri(creditcardServiceBaseAddress_2+"1");
+               {
+                   client.BaseAddress = new Uri(creditcardServiceBaseAddress_2 + "1");
+                   LoggingFunction("Retry logic: Start with Alternative 1", "Warning    ", "BlackFriday:PaymentMethodsController");
+                   LoggingFunction("Retry logic: Route 1 is not reachable or false URL given...", "Error      ", "BlackFriday:PaymentMethodsController");
+               }
                else
+               {
                    client.BaseAddress = new Uri(creditcardServiceBaseAddress_3);
+                   LoggingFunction("Retry logic: Start with Alternative 2", "Warning    ", "BlackFriday:PaymentMethodsController");
+                   LoggingFunction("Retry logic: Route 2 is not reachable or false URL given...", "Error      ", "BlackFriday:PaymentMethodsController");
+               }
 
 
            });
@@ -64,7 +77,7 @@ namespace BlackFriday.Controllers
             .FallbackAsync(new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent("Please Try again later")
-
+                //TODO: Log also here? Which kind of type?
             });
             var retryWithFallback = fallbackPolicy.WrapAsync(retryPolicy);
 
@@ -79,12 +92,28 @@ namespace BlackFriday.Controllers
             if (response.IsSuccessStatusCode)//Status Code is always 404
             {
                 acceptedPaymentMethods = await response.Content.ReadAsStringAsync();
+                LoggingFunction("Retry logic: Route 3 is reachable", "Information", "BlackFriday:PaymentMethodsController");
+                LoggingFunction("Retry logic: Rout 1 and 2 are not reachable", "Warning    ", "BlackFriday:PaymentMethodsController");
                 return new string[] { acceptedPaymentMethods ,"BaseAdress 3 works"};
             }
             else
+            LoggingFunction("Retry logic: Service is not avaliable. Try again later", "Error      ", "BlackFriday:PaymentMethodsController");
             return new string[] { "Service is not avaliable Try again later" };
         }
 
+        public void LoggingFunction(string message, string typ, string who)
+        {
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append(message);
+            // flush every 20 seconds as you do it
+            //File.AppendAllText(filePath + "log.txt", sb.ToString());
+            //sb.Clear();
+            string logMessage = DateTime.Now + ", TYPE: " + typ + ", WHO: " + who + ", MESSAGE: " + message + "\n";
+            StreamWriter sw = new StreamWriter(@".\log.txt", true);
+            sw.WriteLine(logMessage);
+            sw.Close();
+            logMessage = "";
+        }
     }
 }
 
