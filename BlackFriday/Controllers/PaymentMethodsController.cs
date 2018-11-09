@@ -35,6 +35,7 @@ namespace BlackFriday.Controllers
         {
             HttpClient client = new HttpClient();
             LoggingFunction("HttpGet started", "Information", "BlackFriday:PaymentMethodsController");
+
             //old code before retry logic START
             /*client.BaseAddress = new Uri(creditcardServiceBaseAddress);
             client.DefaultRequestHeaders.Accept.Clear();
@@ -60,12 +61,13 @@ namespace BlackFriday.Controllers
                {
                    client.BaseAddress = new Uri(creditcardServiceBaseAddress_2 + "1");
                    LoggingFunction("Retry logic: Start with Alternative 1", "Warning    ", "BlackFriday:PaymentMethodsController");
-                   LoggingFunction("Retry logic: Route 1 is dead...", "Error      ", "BlackFriday:PaymentMethodsController");
+                   LoggingFunction("Retry logic: Route 1 is not reachable or false URL given...", "Error      ", "BlackFriday:PaymentMethodsController");
                }
                else
                {
                    client.BaseAddress = new Uri(creditcardServiceBaseAddress_3);
-                   LoggingFunction("Retry logic: Route 2 is dead...", "Warning    ", "BlackFriday:PaymentMethodsController");
+                   LoggingFunction("Retry logic: Start with Alternative 2", "Warning    ", "BlackFriday:PaymentMethodsController");
+                   LoggingFunction("Retry logic: Route 2 is not reachable or false URL given...", "Error      ", "BlackFriday:PaymentMethodsController");
                }
 
 
@@ -75,7 +77,7 @@ namespace BlackFriday.Controllers
             .FallbackAsync(new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent("Please Try again later")
-
+                //TODO: Log also here? Which kind of type?
             });
             var retryWithFallback = fallbackPolicy.WrapAsync(retryPolicy);
 
@@ -90,9 +92,12 @@ namespace BlackFriday.Controllers
             if (response.IsSuccessStatusCode)//Status Code is always 404
             {
                 acceptedPaymentMethods = await response.Content.ReadAsStringAsync();
+                LoggingFunction("Retry logic: Route 3 is reachable", "Information", "BlackFriday:PaymentMethodsController");
+                LoggingFunction("Retry logic: Rout 1 and 2 are not reachable", "Warning    ", "BlackFriday:PaymentMethodsController");
                 return new string[] { acceptedPaymentMethods ,"BaseAdress 3 works"};
             }
             else
+            LoggingFunction("Retry logic: Service is not avaliable. Try again later", "Error      ", "BlackFriday:PaymentMethodsController");
             return new string[] { "Service is not avaliable Try again later" };
         }
 
