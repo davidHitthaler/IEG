@@ -16,6 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTPServerService", "FTPServ
 	ProjectSection(ProjectDependencies) = postProject
 		{DCECBF10-DC50-42BC-99E7-A5420C624AAE} = {DCECBF10-DC50-42BC-99E7-A5420C624AAE}
 	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEGPaymentService", "IEGPaymentService\IEGPaymentService.csproj", "{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +36,17 @@ Global
 		{DCECBF10-DC50-42BC-99E7-A5420C624AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCECBF10-DC50-42BC-99E7-A5420C624AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCECBF10-DC50-42BC-99E7-A5420C624AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{AE8D701C-0641-490F-823E-C2E3AFB9A410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE8D701C-0641-490F-823E-C2E3AFB9A410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE8D701C-0641-490F-823E-C2E3AFB9A410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE8D701C-0641-490F-823E-C2E3AFB9A410}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> AkramTask5V2
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

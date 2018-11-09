@@ -1,0 +1,75 @@
+
+
+1. Führe das Projekt aus und benutze eines der folgenden Tools (Fiddler und Swagger oder Postman):
+
+Method: GET 	
+URL:    http://localhost:62280/api/PaymentService
+
+Test 1:
+Header: 
+User-Agent: Fiddler
+Content-Type: text/json
+Host: localhost:62280
+Content-Length: 88
+Accept: text/json
+
+-->Result muss eine Json liste sein
+
+Test 2:
+Header: 
+User-Agent: Fiddler
+Content-Type: text/xml
+Host: localhost:62280
+Content-Length: 88
+Accept: text/xml
+
+-->Result muss eine text/xml liste sein
+
+Test 3:
+Header: 
+User-Agent: Fiddler
+Content-Type: text/csv
+Host: localhost:62280
+Content-Length: 88
+Accept: text/csv
+
+-->Result muss eine text/csv sein
+
+
+Method: POST
+URL:    http://localhost:62280/api/PaymentService
+
+Test 4:
+Header: 
+User-Agent: Fiddler
+Content-Type: text/json
+Host: localhost:62280
+Content-Length: 88
+Accept: text/json
+
+Body:
+ {
+        "paymentId": 10,
+        "paymentArt": "asdf",
+        "paymentBank": "Sparkasdfasse",
+        "paymentLand": "ddds"
+    }
+-->Result muss eine json liste sein + diesen hinzugefügen element
+
+Test 5
+Header: 
+User-Agent: Fiddler
+Content-Type: text/json
+Host: localhost:62280
+Content-Length: 88
+Accept: text/json
+
+Body:
+ <PaymentModel>
+        <PaymentId>1</PaymentId>
+        <PaymentArt>Kreditkarte</PaymentArt>
+        <PaymentBank>Sparkasse</PaymentBank>
+        <PaymentLand>Österreich</PaymentLand>
+    </PaymentModel>
+-->Result muss ein xml sein + diesen hinzugefügen element
+
