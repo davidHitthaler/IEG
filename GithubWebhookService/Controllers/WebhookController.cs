@@ -11,51 +11,8 @@ namespace GithubWebhookService.Controllers
     [Route("api/[controller]")]
     public class WebhookController : Controller
     {
-
-        /*    [GitHubWebHook]
-            public IActionResult GitHubHandler(string id, string @event, JObject data)
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
-                return Ok();
-            }*/
-
-        [GitHubWebHook(EventName = "push", Id = "It")]
-        public IActionResult HandlerForItsPushes(string[] events, JObject data)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            return Ok();
-        }
-
-        [GitHubWebHook(Id = "It")]
-        public IActionResult HandlerForIt(string[] events, JObject data)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            return Ok();
-        }
-
-        [GitHubWebHook(EventName = "push")]
-        public IActionResult HandlerForPush(string id, JObject data)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            return Ok();
-        }
-
+        public static List<string> webhooktext = new List<string>();
+        
         [GitHubWebHook]
         public IActionResult GitHubHandler(string id, string @event, JObject data)
         {
@@ -64,22 +21,17 @@ namespace GithubWebhookService.Controllers
                 return BadRequest(ModelState);
             } else
             {
-                Console.WriteLine(id);
-                Console.WriteLine(@event);
+                webhooktext.Add(id + "\n" + @event + "\n" + data);      // for webhook test => ....ngrok.io/api/webhook => returns json object
             }
 
             return Ok();
         }
 
-        [GeneralWebHook]
-        public IActionResult FallbackHandler(string receiverName, string id, string eventName)
+        [HttpGet]
+        public IEnumerable<string> Get()
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            return Ok();
+            return webhooktext;
         }
+
     }
 }
