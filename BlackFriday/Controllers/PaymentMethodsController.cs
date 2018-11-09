@@ -30,20 +30,6 @@ namespace BlackFriday.Controllers
             _logger = logger;
         }
 
-        public void LoggingFunction(string message, string typ, string who)
-        {
-            //StringBuilder sb = new StringBuilder();
-            //sb.Append(message);
-            // flush every 20 seconds as you do it
-            //File.AppendAllText(filePath + "log.txt", sb.ToString());
-            //sb.Clear();
-            string logMessage = DateTime.Now + ", TYPE: " + typ + ",WHO: " + who + ", MESSAGE: " + message + "\n";
-            StreamWriter sw = new StreamWriter(@".\log.txt", true);
-            sw.WriteLine(logMessage);
-            sw.Close();
-            logMessage = "";
-        }
-
         [HttpGet]
         public async Task<IEnumerable<string>> Get()
         {
@@ -110,6 +96,19 @@ namespace BlackFriday.Controllers
             return new string[] { "Service is not avaliable Try again later" };
         }
 
+        public void LoggingFunction(string message, string typ, string who)
+        {
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append(message);
+            // flush every 20 seconds as you do it
+            //File.AppendAllText(filePath + "log.txt", sb.ToString());
+            //sb.Clear();
+            string logMessage = DateTime.Now + ", TYPE: " + typ + ", WHO: " + who + ", MESSAGE: " + message + "\n";
+            StreamWriter sw = new StreamWriter(@".\log.txt", true);
+            sw.WriteLine(logMessage);
+            sw.Close();
+            logMessage = "";
+        }
     }
 }
 
