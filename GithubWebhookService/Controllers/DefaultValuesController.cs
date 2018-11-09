@@ -15,5 +15,12 @@ namespace GithubWebhookService.Controllers
         {
             return new string[] { "value1", "value2" };
         }
+
+        [HttpPost]
+        public void Post([FromBody]string value)
+        {
+            string a = "a";
+            Console.Write(a);   
+        }
     }
 }
