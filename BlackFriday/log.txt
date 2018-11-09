@@ -1,0 +1,8 @@
+09.11.2018 12:02:37, TYPE: Information,WHO: BlackFriday:PaymentMethodsController, MESSAGE: HttpGet started
+
+09.11.2018 12:02:40, TYPE: Warning    ,WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Start with Alternative 1
+
+09.11.2018 12:02:40, TYPE: Error      ,WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 1 is dead...
+
+09.11.2018 12:02:42, TYPE: Warning    ,WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 2 is dead...
+

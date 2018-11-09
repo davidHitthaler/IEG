@@ -9,6 +9,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Polly;
 using System.Net;
+using System.Text;
+using System.IO;
 
 namespace BlackFriday.Controllers
 {
@@ -27,11 +29,27 @@ namespace BlackFriday.Controllers
         {
             _logger = logger;
         }
+
+        public void LoggingFunction(string message, string typ, string who)
+        {
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append(message);
+            // flush every 20 seconds as you do it
+            //File.AppendAllText(filePath + "log.txt", sb.ToString());
+            //sb.Clear();
+            string logMessage = DateTime.Now + ", TYPE: " + typ + ",WHO: " + who + ", MESSAGE: " + message + "\n";
+            StreamWriter sw = new StreamWriter(@".\log.txt", true);
+            sw.WriteLine(logMessage);
+            sw.Close();
+            logMessage = "";
+        }
+
         [HttpGet]
         public async Task<IEnumerable<string>> Get()
         {
             HttpClient client = new HttpClient();
-        //old code before retry logic START
+            LoggingFunction("HttpGet started", "Information", "BlackFriday:PaymentMethodsController");
+            //old code before retry logic START
             /*client.BaseAddress = new Uri(creditcardServiceBaseAddress);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -43,7 +61,7 @@ namespace BlackFriday.Controllers
           
             foreach (var item in acceptedPaymentMethods)
             */
-          //old code before retry logic END
+            //old code before retry logic END
             client.BaseAddress = new Uri(creditcardServiceBaseAddress + "fehlerhaft");
 
             var retryPolicy = Policy
@@ -53,9 +71,16 @@ namespace BlackFriday.Controllers
 
                client = new HttpClient();
                if (retryCount == 1)
-                   client.BaseAddress = new Uri(creditcardServiceBaseAddress_2+"1");
+               {
+                   client.BaseAddress = new Uri(creditcardServiceBaseAddress_2 + "1");
+                   LoggingFunction("Retry logic: Start with Alternative 1", "Warning    ", "BlackFriday:PaymentMethodsController");
+                   LoggingFunction("Retry logic: Route 1 is dead...", "Error      ", "BlackFriday:PaymentMethodsController");
+               }
                else
+               {
                    client.BaseAddress = new Uri(creditcardServiceBaseAddress_3);
+                   LoggingFunction("Retry logic: Route 2 is dead...", "Warning    ", "BlackFriday:PaymentMethodsController");
+               }
 
 
            });
