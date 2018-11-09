@@ -1,0 +1,3 @@
+﻿1) http://localhost:55983/api/PaymentMethods aufrufen
+2) Im BlackFriday Projekt wird ein File "log.txt" erstellt.
+3) Dorthin wird geloggt.
