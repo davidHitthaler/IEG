@@ -12,11 +12,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IEGEasyCreditCardService", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalogService", "ProductCatalogService\ProductCatalogService.csproj", "{DCECBF10-DC50-42BC-99E7-A5420C624AAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTPServerService", "FTPServerService\FTPServerService.csproj", "{AE8D701C-0641-490F-823E-C2E3AFB9A410}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTPServerService", "FTPServerService\FTPServerService.csproj", "{AE8D701C-0641-490F-823E-C2E3AFB9A410}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DCECBF10-DC50-42BC-99E7-A5420C624AAE} = {DCECBF10-DC50-42BC-99E7-A5420C624AAE}
 	EndProjectSection
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEGPaymentService", "IEGPaymentService\IEGPaymentService.csproj", "{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IEGPaymentService", "IEGPaymentService\IEGPaymentService.csproj", "{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubWebhookService", "GithubWebhookService\GithubWebhookService.csproj", "{2B1B414A-DE47-4477-9F42-8FC22560ADCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,17 +39,18 @@ Global
 		{DCECBF10-DC50-42BC-99E7-A5420C624AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCECBF10-DC50-42BC-99E7-A5420C624AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCECBF10-DC50-42BC-99E7-A5420C624AAE}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
 		{AE8D701C-0641-490F-823E-C2E3AFB9A410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE8D701C-0641-490F-823E-C2E3AFB9A410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE8D701C-0641-490F-823E-C2E3AFB9A410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE8D701C-0641-490F-823E-C2E3AFB9A410}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
 		{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E69D6E9-7036-4F90-94CA-3A96FA3D0D6A}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> AkramTask5V2
+		{2B1B414A-DE47-4477-9F42-8FC22560ADCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B1B414A-DE47-4477-9F42-8FC22560ADCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B1B414A-DE47-4477-9F42-8FC22560ADCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B1B414A-DE47-4477-9F42-8FC22560ADCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

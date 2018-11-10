@@ -1,14 +1,14 @@
-09.11.2018 15:04:36, TYPE: Information, WHO: BlackFriday:PaymentMethodsController, MESSAGE: HttpGet started
+10.11.2018 07:54:03, TYPE: Information, WHO: BlackFriday:PaymentMethodsController, MESSAGE: HttpGet started
 
-09.11.2018 15:04:40, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Start with Alternative 1
+10.11.2018 07:54:03, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Start with Alternative 1
 
-09.11.2018 15:04:40, TYPE: Error      , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 1 is not reachable or false URL given...
+10.11.2018 07:54:03, TYPE: Error      , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 1 is not reachable or false URL given...
 
-09.11.2018 15:04:43, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Start with Alternative 2
+10.11.2018 07:54:06, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Start with Alternative 2
 
-09.11.2018 15:04:43, TYPE: Error      , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 2 is not reachable or false URL given...
+10.11.2018 07:54:06, TYPE: Error      , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 2 is not reachable or false URL given...
 
-09.11.2018 15:04:45, TYPE: Information, WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 3 is reachable
+10.11.2018 07:54:17, TYPE: Information, WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Route 3 is reachable
 
-09.11.2018 15:04:45, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Rout 1 and 2 are not reachable
+10.11.2018 07:54:17, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Rout 1 and 2 are not reachable
 
