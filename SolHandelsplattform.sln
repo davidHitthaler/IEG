@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IEGPaymentService", "IEGPay
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubWebhookService", "GithubWebhookService\GithubWebhookService.csproj", "{2B1B414A-DE47-4477-9F42-8FC22560ADCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateSurvey", "CreateSurvey\CreateSurvey.csproj", "{28141F48-BFEE-4E20-86CD-E15EBE794C0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{2B1B414A-DE47-4477-9F42-8FC22560ADCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B1B414A-DE47-4477-9F42-8FC22560ADCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B1B414A-DE47-4477-9F42-8FC22560ADCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28141F48-BFEE-4E20-86CD-E15EBE794C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28141F48-BFEE-4E20-86CD-E15EBE794C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28141F48-BFEE-4E20-86CD-E15EBE794C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28141F48-BFEE-4E20-86CD-E15EBE794C0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
