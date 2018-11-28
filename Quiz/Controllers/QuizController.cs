@@ -55,7 +55,7 @@ namespace Quiz.Controllers
                 JArray results = JArray.Parse(surveyJson);
                 foreach (var result in results)
                 {
-                 //   string[] _answers = new string[8];
+                 //   string[] _answers = new string[8]; soll erst json änderen dann geht
                     int questionId = Int32.Parse((string)result["questionId"]);
                     string question = (string)result["question"];
                     string answer1 = (string)result["answer1"];
