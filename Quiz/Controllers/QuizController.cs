@@ -60,11 +60,11 @@ namespace Quiz.Controllers
                     string question = (string)result["question"];
                     string answer1 = (string)result["answer1"];
                     string answer2 = (string)result["answer2"];
-                    string answer3 = (string)result["answer2"];
-                    string answer4 = (string)result["answer2"];
-                    string answer5 = (string)result["answer2"];
-                    string answer6 = (string)result["answer2"];
-                    string answer7 = (string)result["answer2"];
+                    string answer3 = (string)result["answer3"];
+                    string answer4 = (string)result["answer4"];
+                    string answer5 = (string)result["answer5"];
+                    string answer6 = (string)result["answer6"];
+                    string answer7 = (string)result["answer7"];
                     string category = (string)result["category"];
 
                     _quiz.Add(new QuizModel() { QuestionId = questionId, Question = question, Answer1 = answer1, Answer2 = answer2, Answer3 = answer3, Answer4 = answer4, Answer5 = answer5, Answer6 = answer6, Answer7 = answer7, Category = category });
