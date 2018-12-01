@@ -1,30 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System.Net.Http;
 using System.Net.Http.Headers;
-
-using System.Net;
-using System.Text;
-using System.IO;
-using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using Quiz.Models;
 
 namespace Quiz.Controllers
 {
-    [Produces("application/json")]
+    [Produces("text/html")]
     [Route("api/quiz")]
     [ApiController]
     public class QuizController : ControllerBase
@@ -33,7 +19,7 @@ namespace Quiz.Controllers
         //string[] _answers = new string[5];
 
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ContentResult Index()
         {
             List<string> survey = new List<string>();
 
@@ -69,26 +55,22 @@ namespace Quiz.Controllers
 
                     _quiz.Add(new QuizModel() { QuestionId = questionId, Question = question, Answer1 = answer1, Answer2 = answer2, Answer3 = answer3, Answer4 = answer4, Answer5 = answer5, Answer6 = answer6, Answer7 = answer7, Category = category });
 
-                    /*  // Answers
-                      JArray answers = (JArray)result["answers"];
-                      for (int i = 0; i < answers.Count; i++)
-                      {
-                          _answers[i] = (string)answers[i];
-                      }
-                      //---
-                      string category = (string)result["category"];
-                      Console.WriteLine(_answers);
-                      _answers = new string[8];*/
                 }
+                response.Content = new StringContent("<html><body>Hello World</body></html>");
+                response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
+                
             }
-            else
-            {
-                return new string[] { survey.ToString(), "ok" };
-            }
+            var path = "~/index.html";
+          
+            return new ContentResult
+            { 
+                ContentType = "text/html",
+                StatusCode = (int)HttpStatusCode.OK,
+                Content = "<html><body><form><h1>welcome</h1><input id=\"tempDivName\" type=\"hidden\" @/>" 
+               
 
-
-            return survey;
-
+        };
+            
         }
 
     }

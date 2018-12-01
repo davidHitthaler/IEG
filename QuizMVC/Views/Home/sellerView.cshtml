@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Quiz.Models.QuizModel>
+
+@{
+    ViewBag.Title = "sellerView";
+}
+
+<h2>sellerView</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Save", "Home", FormMethod.Post))
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Question)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuestionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Question)
+                </td>
+                <td>
+                    @Html.RadioButton("Answer", "1")
+                    @Html.DisplayFor(modelItem => item.Answer1)
+                </td>
+                <td>
+                    @Html.RadioButton("Answer", "2")
+                    @Html.DisplayFor(modelItem => item.Answer2)
+                </td>
+                <td>
+                    @Html.RadioButton("Answer", "3")
+                    @Html.DisplayFor(modelItem => item.Answer3)
+                </td>
+                <td>
+                    @Html.RadioButton("Answer", "4")
+                    @Html.DisplayFor(modelItem => item.Answer4)
+                </td>
+                <td>
+                    @Html.RadioButton("Answer", "5")
+                    @Html.DisplayFor(modelItem => item.Answer5)
+                </td>
+                <td>
+                    @Html.RadioButton("Answer", "6")
+                    @Html.DisplayFor(modelItem => item.Answer6)
+                </td>
+                <td>
+                    @Html.RadioButton("Answer", "7")
+                    @Html.DisplayFor(modelItem => item.Answer7)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+
+    @Html.ActionLink("Save", "Save");
+    <input type="submit" value="Save" />
+}
+
