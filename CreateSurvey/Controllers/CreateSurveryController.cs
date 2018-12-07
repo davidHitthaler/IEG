@@ -9,7 +9,7 @@ namespace CreateSurvey.Controllers
     [Route("api/createSurvery")]
     public class CreateSurveyController : Controller
     {
-        private CreateSurveyStorage _surveryStorage = new CreateSurveyStorage();
+        private static CreateSurveyStorage _surveryStorage = new CreateSurveyStorage();
 
         // GET api/values
         [HttpGet]
