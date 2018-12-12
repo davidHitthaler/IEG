@@ -11,16 +11,14 @@ namespace QuizMVC.Models
         {
         }
         // model für HTML später binden
-        public AnswerModel(int questionId, string question, string answer,  string category)
+        public AnswerModel(int questionId, string answer,  string category)
         {
             QuestionId = questionId;
-            Question = question;
             Answer = answer;
             Category = category;
         }
 
         public int QuestionId { get; set; }
-        public string Question { get; set; }
         public string Answer { get; set; }
         public string Category { get; set; }
 

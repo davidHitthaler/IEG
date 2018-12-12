@@ -6,9 +6,7 @@
 
 <h2>sellerView</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 @using (Html.BeginForm("Save", "Home", FormMethod.Post))
 {
     <table class="table">
@@ -48,52 +46,57 @@
 
         @foreach (var item in Model)
         {
-            <tr>
+        <tr>
+            <td>
+                @Html.HiddenFor(modelItem => item.QuestionId, new { @id = item.QuestionId })
+                @Html.DisplayFor(modelItem => item.QuestionId)
+            </td>
+            <td>
+                @Html.HiddenFor(modelItem => item.Question, new { @id = item.Question })
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+           
                 <td>
-                    @Html.DisplayFor(modelItem => item.QuestionId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Question)
-                </td>
-                <td>
-                    @Html.RadioButton("Answer", "1")
+                    @Html.RadioButton("Answer"+ item.QuestionId, "1", new { @id = "option1" })
                     @Html.DisplayFor(modelItem => item.Answer1)
                 </td>
                 <td>
-                    @Html.RadioButton("Answer", "2")
+                    @Html.RadioButton("Answer" + item.QuestionId, "2", new { @id = "option2"})
                     @Html.DisplayFor(modelItem => item.Answer2)
                 </td>
                 <td>
-                    @Html.RadioButton("Answer", "3")
+                    @Html.RadioButton("Answer" + item.QuestionId, "3", new { @id = "option3" })
                     @Html.DisplayFor(modelItem => item.Answer3)
                 </td>
                 <td>
-                    @Html.RadioButton("Answer", "4")
+                    @Html.RadioButton("Answer" + item.QuestionId, "4", new { @id = "option4"})
                     @Html.DisplayFor(modelItem => item.Answer4)
                 </td>
                 <td>
-                    @Html.RadioButton("Answer", "5")
+                    @Html.RadioButton("Answer" + item.QuestionId, "5", new { @id = "option5"})
                     @Html.DisplayFor(modelItem => item.Answer5)
                 </td>
                 <td>
-                    @Html.RadioButton("Answer", "6")
+                    @Html.RadioButton("Answer" + item.QuestionId, "6", new { @id = "option6"})
                     @Html.DisplayFor(modelItem => item.Answer6)
                 </td>
                 <td>
-                    @Html.RadioButton("Answer", "7")
+                    @Html.RadioButton("Answer" + item.QuestionId, "7", new { @id = "option7"})
                     @Html.DisplayFor(modelItem => item.Answer7)
                 </td>
+               
                 <td>
+                    @Html.HiddenFor(modelItem => item.Category)
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
 
-            </tr>
+</tr>
 
         }
 
     </table>
 
-    @Html.ActionLink("Save", "Save");
     <input type="submit" value="Save" />
+  
 }
 
