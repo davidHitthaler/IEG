@@ -141,10 +141,11 @@ namespace QuizMVC.Controllers
             // System.IO.File.WriteAllText(@"C:\Users\mabdullah\source\Repos\IEG\answers.txt", json);
             string textToReturn = System.IO.File.ReadAllText(path).ToString();
            
-            return Json(textToReturn.ToString(), JsonRequestBehavior.AllowGet);
+           // return Json(textToReturn.ToString(), JsonRequestBehavior.AllowGet);
+            return View("saveView");
         }
-       
-        
+
+
 
     }
 }
