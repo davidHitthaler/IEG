@@ -21,6 +21,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IEGPaymentService", "IEGPay
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubWebhookService", "GithubWebhookService\GithubWebhookService.csproj", "{2B1B414A-DE47-4477-9F42-8FC22560ADCE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discovery", "Discovery", "{3F3B6078-8976-4F3A-ACB2-5DFBCD569D56}"
+	ProjectSection(SolutionItems) = preProject
+		..\Discovery\ConsulExample\Consul_Install.cmd = ..\Discovery\ConsulExample\Consul_Install.cmd
+		..\Discovery\ConsulExample\Consul_Run_Dev.cmd = ..\Discovery\ConsulExample\Consul_Run_Dev.cmd
+		..\Discovery\ConsulExample\LICENSE = ..\Discovery\ConsulExample\LICENSE
+		..\Discovery\ConsulExample\Readme.md = ..\Discovery\ConsulExample\Readme.md
+		..\Discovery\ConsulExample\RunAll.cmd = ..\Discovery\ConsulExample\RunAll.cmd
+		..\Discovery\ConsulExample\RunService5200.cmd = ..\Discovery\ConsulExample\RunService5200.cmd
+		..\Discovery\ConsulExample\RunService5300.cmd = ..\Discovery\ConsulExample\RunService5300.cmd
+		..\Discovery\ConsulExample\RunWebsite.cmd = ..\Discovery\ConsulExample\RunWebsite.cmd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consul", "Consul", "{C3CF57ED-9B86-4D40-B428-27F17DB5093F}"
+	ProjectSection(SolutionItems) = preProject
+		..\Discovery\ConsulExample\Consul\consul.exe = ..\Discovery\ConsulExample\Consul\consul.exe
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CBC3837F-4043-4F81-8EC3-81DBE6EE46A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +73,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3CF57ED-9B86-4D40-B428-27F17DB5093F} = {3F3B6078-8976-4F3A-ACB2-5DFBCD569D56}
+		{CBC3837F-4043-4F81-8EC3-81DBE6EE46A0} = {3F3B6078-8976-4F3A-ACB2-5DFBCD569D56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C31E0F8-78F5-4233-9E5F-B8C28EE63861}
