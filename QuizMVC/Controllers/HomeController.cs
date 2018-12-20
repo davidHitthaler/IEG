@@ -75,7 +75,10 @@ namespace QuizMVC.Controllers
         [HttpPost]
         public ActionResult Save(FormCollection fc, IEnumerable<QuizModel> model)
         {
-            string path = @"C:\Users\mabdullah\source\Repos\IEG\answers.txt";
+            //string path = @"C:\Users\mabdullah\source\Repos\IEG\answers.txt";
+            string path = @"V:\eigene-docs\master fh campus02\IEG1\SolHandelsplattform V.01 - SDK 2.0\answers.txt";
+            //TODO make it relative!
+
             int questionId; 
             string answer;
 
