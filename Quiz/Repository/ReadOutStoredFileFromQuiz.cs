@@ -19,7 +19,7 @@ namespace Quiz.Repository
             JArray results = JArray.Parse(json_string);
 
             foreach (JObject o in results.Children<JObject>())
-            {                
+            {
                 int QuestionId = Int32.Parse((string)o["QuestionId"]);
                 int Answer = Int32.Parse((string)o["Answer"]);
                 string Category = (string)o["Category"];
@@ -39,5 +39,6 @@ namespace Quiz.Repository
 
                 _evaluateStorage.Add(new EvaluateModel() { questionId = QuestionId, answer = Answer, category = Category });
             }
+        }
     }
 }

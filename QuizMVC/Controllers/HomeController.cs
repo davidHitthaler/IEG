@@ -76,7 +76,8 @@ namespace QuizMVC.Controllers
         public ActionResult Save(FormCollection fc, IEnumerable<QuizModel> model)
         {
             //string path = @"C:\Users\mabdullah\source\Repos\IEG\answers.txt";
-            string path = @"V:\eigene-docs\master fh campus02\IEG1\SolHandelsplattform V.01 - SDK 2.0\answers.txt";
+            //string path2 = @"V:\eigene-docs\master fh campus02\IEG1\SolHandelsplattform V.01 - SDK 2.0\answers.txt";
+            string path = "..\\answers.txt";
             //TODO make it relative!
 
             int questionId; 
@@ -140,7 +141,7 @@ namespace QuizMVC.Controllers
             //System.IO.File.WriteAllText(@"C:\Users\mabdullah\source\Repos\IEG\answers.txt", jsonData);
             // var initialJson = System.IO.File.ReadAllText(@"C:\Users\mabdullah\source\Repos\IEG\answers.txt"");
             string anwer_json = JsonConvert.SerializeObject(_answer.ToArray());
-            System.IO.File.AppendAllText(path, anwer_json);
+            
             // System.IO.File.WriteAllText(@"C:\Users\mabdullah\source\Repos\IEG\answers.txt", json);
             string textToReturn = System.IO.File.ReadAllText(path).ToString();
            
