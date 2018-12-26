@@ -13,6 +13,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
 
 namespace QuizMVC.Controllers
 {
@@ -27,11 +28,11 @@ namespace QuizMVC.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            string link = null;
+            string link = "http://localhost:50221/api/createSurvery";
             WebClient wc = new WebClient();
+
             try { 
-            string surveyJson = wc.DownloadString("http://localhost:50221/api/createSurvery");
-                link = surveyJson;
+            string surveyJson = wc.DownloadString(link);
                 JArray results = JArray.Parse(surveyJson);
                 foreach (var result in results)
                 {
@@ -50,11 +51,16 @@ namespace QuizMVC.Controllers
                     {
                         buyerQuiz.Add(new QuizModel(questionId, question, answer1, answer2, answer3, answer4, answer5, answer6, answer7, category));
                         LoggingFunction("Buyer action: Buyer questionare", "Information", "QuizMVC:HomeController");
+                        Console.WriteLine("-----------------------");
+                        Debug.WriteLine( "Buyer categorie");
+
                     }
                     if (category == "seller")
                     {
                         sellerQuiz.Add(new QuizModel(questionId, question, answer1, answer2, answer3, answer4, answer5, answer6, answer7, category));
                         LoggingFunction("Seller action: Seller questionare", "Information", "QuizMVC:HomeController");
+                        Console.WriteLine("-----------------------");
+                        Debug.WriteLine("Seller categorie");
                     }
                     _quiz.Add(new QuizModel(questionId, question, answer1, answer2, answer3, answer4, answer5, answer6, answer7, category));
                 }
@@ -62,9 +68,11 @@ namespace QuizMVC.Controllers
                 return View("index");
 
             }
-            catch (Exception ex) { 
-            LoggingFunction("Link:" + link+ "isn't not reachable", "Error", "QUizMVC:HomeController");
-            LoggingFunction(ex.Message,"Exception","Quiz: HomeController");
+            catch (Exception ex) {
+                Console.WriteLine(link + "isn't not reachable");
+                Debug.WriteLine(link + "isn't not reachable");
+                LoggingFunction("Link:" + link+ "isn't not reachable", "Error", "QUizMVC:HomeController");
+                LoggingFunction(ex.Message,"Exception","Quiz: HomeController");
                 return View("ErrorView");
             }
             // JObject results = JObject.Parse(surveyJson);
@@ -157,6 +165,8 @@ namespace QuizMVC.Controllers
             //System.IO.File.WriteAllText(@"C:\Users\mabdullah\source\Repos\IEG\answers.txt", jsonData);
             // var initialJson = System.IO.File.ReadAllText(@"C:\Users\mabdullah\source\Repos\IEG\answers.txt"");
             string anwer_json = JsonConvert.SerializeObject(_answer.ToArray());
+            Console.WriteLine("-----------------------");
+            Debug.WriteLine("Modell is converted to json object");
             string readValues = null;
             try
             {
@@ -167,6 +177,8 @@ namespace QuizMVC.Controllers
 
                     System.IO.File.AppendAllText(fullPath, anwer_json);
                     LoggingFunction("Exist File: File doesn't exist and new file is created", "Warning", "QuizMVC:HomeController");
+                    Console.WriteLine("-----------------------");
+                    Debug.WriteLine(fullPath + ":isn't exist and new one is created");
                 }
                 System.IO.File.AppendAllText(fileName, anwer_json);
                 readValues = System.IO.File.ReadAllLines(fileName, Encoding.UTF8).ToString();
@@ -181,6 +193,8 @@ namespace QuizMVC.Controllers
             {
                 readValues = ex.ToString();
                 LoggingFunction(ex.Message, ex.GetType().ToString(), "QuizMVC: HomeController");
+                Console.WriteLine("-----------------------");
+                Debug.WriteLine(ex.Message);
                 return View("ErrorView");
             }
             
