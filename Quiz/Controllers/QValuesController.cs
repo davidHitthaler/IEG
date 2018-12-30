@@ -8,7 +8,7 @@ namespace Quiz.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class QValuesController : ControllerBase
     {
         // GET api/values
         [HttpGet]
