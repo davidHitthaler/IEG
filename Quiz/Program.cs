@@ -12,13 +12,24 @@ namespace Quiz
 {
     public class Program
     {
-        public static void Main(string[] args)
+        /*public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                .UseStartup<Startup>();*/
+        public static void Main(string[] args)
+        {
+            BuildWebHost(args).Run();
+        }
+
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseApplicationInsights()
+                .UseStartup<Startup>()
+                .Build();
+
     }
 }
