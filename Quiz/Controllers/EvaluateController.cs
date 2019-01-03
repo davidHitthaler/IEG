@@ -16,14 +16,14 @@ namespace Quiz.Controllers
         static ReadOutStoredFileFromQuiz liste = new ReadOutStoredFileFromQuiz();
         static CreateSurveyStorage surveyStorage = new CreateSurveyStorage();
        
-    /*    [HttpGet]
+        [HttpGet]
         public IEnumerable<string> Get()
         {
             string mostwanted = "";
             mostwanted = calcEvaluation(liste.Get(), 2);
-            return new string[] { mostwanted };
+            return new string[] { "Please select a question-ID. URL Example: http://localhost:56482/api/evaluate/1" };
         }
-        */
+        
 
         [HttpGet("{questionId}")]
         public IEnumerable<string> Get(int questionId)
