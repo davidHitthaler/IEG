@@ -101,8 +101,8 @@ namespace QuizMVC.Controllers
         public ActionResult Save(FormCollection fc, IEnumerable<QuizModel> model)
         {
             //string path = @"C:\Users\mabdullah\source\Repos\IEG\answers.txt";
-            //string path = @"V:\eigene-docs\master fh campus02\IEG1\SolHandelsplattform V.01 - SDK 2.0\answers.txt";
-            //TODO make it relative!
+            string path = @"V:\eigene-docs\master fh campus02\IEG1\SolHandelsplattform V.01 - SDK 2.0\answers.txt";
+            //TODO make it relative, workaround: Get in your path to you IEG project file to test!
 
             int questionId;
             string answer;

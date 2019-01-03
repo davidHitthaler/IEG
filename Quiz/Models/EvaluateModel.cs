@@ -7,11 +7,11 @@ namespace Quiz.Models
 {
     public class EvaluateModel
     {
-        public EvaluateModel(int QuestionId, int Answer, string Category)
+        public EvaluateModel(int questionId, int answer, string category)
         {
-            questionId = QuestionId;
-            answer = Answer;
-            category = Category;
+            this.QuestionId = questionId;
+            this.Answer = answer;
+            this.Category = category;
         }
 
         public EvaluateModel()
@@ -19,8 +19,8 @@ namespace Quiz.Models
 
         }
 
-        public int questionId { get; set; }
-        public int answer { get; set; }
-        public string category { get; set; }
+        public int QuestionId { get; set; }
+        public int Answer { get; set; }
+        public string Category { get; set; }
     }
 }
