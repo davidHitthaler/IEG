@@ -1,0 +1,12 @@
+﻿24.12.2018 23:42:14, TYPE: Exception, WHO: Quiz: HomeController, MESSAGE: Der Remoteserver hat einen Fehler zurückgegeben: (404) Nicht gefunden.
+
+24.12.2018 23:43:05, TYPE: Exception, WHO: Quiz: HomeController, MESSAGE: Der Remoteserver hat einen Fehler zurückgegeben: (404) Nicht gefunden.
+
+25.12.2018 21:02:29, TYPE: Exception, WHO: Quiz: HomeController, MESSAGE: Der Remoteserver hat einen Fehler zurückgegeben: (404) Nicht gefunden.
+
+25.12.2018 21:03:58, TYPE: Exception, WHO: Quiz: HomeController, MESSAGE: Der Zugriff auf den Pfad "C:\Program Files (x86)\IIS Express\answers1.txt" wurde verweigert.
+
+25.12.2018 21:07:20, TYPE: Information, WHO: QuizMVC:HomeController, MESSAGE: Exist File: Fiele doesn't exist
+
+25.12.2018 21:17:48, TYPE: Exception, WHO: Quiz: HomeController, MESSAGE: Der Remoteserver hat einen Fehler zurückgegeben: (404) Nicht gefunden.
+

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form>
+        <h1>welcom</h1>
+        <input id="tempDivName" type="hidden" />
+        <ul>
+            <li><a href="#" OnClick="MyFunction('buyer');">Käuferumfrage</a></li>
+            <li><a href="#" OnClick="MyFunction('seller');">Verkäuferumfrage</a></li>
+        </ul>
+        <input type="submit" value="Submit">
+        <div id="buyer" style="display:none">
+            <h2>Q1</h2>
+
+            <input type="radio" name="gender" value="male"> Antwort1<br>
+            <input type="radio" name="gender" value="female"> Antwort2<br>
+            <input type="radio" name="gender" value="other"> antwort3<br>
+            <input type="radio" name="gender" value="male"> Antwort4<br>
+            <input type="radio" name="gender" value="female"> Antwort5
+            <h2>Q2</h2>
+
+            <input type="radio" name="gender" value="male"> Antwort1<br>
+            <input type="radio" name="gender" value="female"> Antwort2<br>
+            <input type="radio" name="gender" value="other"> antwort3<br>
+            <input type="radio" name="gender" value="male"> Antwort4<br>
+            <input type="radio" name="gender" value="female"> Antwort5
+            <h2>Q3</h2>
+
+            <input type="radio" name="gender" value="male"> Antwort1<br>
+            <input type="radio" name="gender" value="female"> Antwort2<br>
+            <input type="radio" name="gender" value="other"> antwort3<br>
+            <input type="radio" name="gender" value="male"> Antwort4<br>
+            <input type="radio" name="gender" value="female"> Antwort5
+
+        </div>
+        <div id="seller" style="display:none">
+            <h2>Q1</h2>
+
+            <input type="radio" name="gender" value="male"> Antwort1<br>
+            <input type="radio" name="gender" value="female"> Antwort2<br>
+            <input type="radio" name="gender" value="other"> antwort3<br>
+            <input type="radio" name="gender" value="male"> Antwort4<br>
+            <input type="radio" name="gender" value="female"> Antwort5
+            <h2>Q2</h2>
+
+            <input type="radio" name="gender" value="male"> Antwort1<br>
+            <input type="radio" name="gender" value="female"> Antwort2<br>
+            <input type="radio" name="gender" value="other"> antwort3<br>
+            <input type="radio" name="gender" value="male"> Antwort4<br>
+            <input type="radio" name="gender" value="female"> Antwort5
+        </div>
+
+    </form>
+</body>
+</html>
+<script>
+    function MyFunction(divName) {
+
+        //hidden val
+        var hiddenVal = document.getElementById("tempDivName");
+
+        //hide old
+        if (hiddenVal.Value != undefined) {
+            var oldDiv = document.getElementById(hiddenVal.Value);
+            oldDiv.style.display = 'none';
+        }
+
+        //show div
+        var tempDiv = document.getElementById(divName);
+        tempDiv.style.display = 'block';
+
+        //save div ID
+        hiddenVal.Value = document.getElementById(divName).getAttribute("id");
+
+    }
+</script>

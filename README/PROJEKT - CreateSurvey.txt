@@ -1,0 +1,31 @@
+
+
+1. Führe das Projekt aus und benutze eines der folgenden Tools (Fiddler und Swagger oder Postman):
+
+Method: GET 	
+URL:    http://localhost:50221/api/createSurvery
+
+Test 1:
+Header: 
+User-Agent: Fiddler
+Host: localhost:50221
+Content-Length: 278
+
+
+-->Result muss eine Json liste sein
+
+
+
+Method: POST
+URL:    http://localhost:50221/api/createSurvery
+
+Test 2:
+Header: 
+User-Agent: Fiddler
+Host: localhost:50221
+Content-Length: 278
+content-type: text/json
+
+Body:
+ {"questionId":7,"question":"Was ist ihre bevorzugte Art zu bezahlen?","answer1":"Bitcoin","answer2":"Kreditkarte","answer3":"Paypal","answer4":"Per Nachname","answer5":"Per Post Express","answer6":"Ins EU Ausland Standard","answer7":"Ins EU Ausland Express","category":"seller"}
+-->Result muss eine json liste sein + diesen hinzugefügen element

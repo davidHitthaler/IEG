@@ -12,3 +12,7 @@
 
 10.11.2018 07:54:17, TYPE: Warning    , WHO: BlackFriday:PaymentMethodsController, MESSAGE: Retry logic: Rout 1 and 2 are not reachable
 
+27.11.2018 10:14:44, TYPE: Information, WHO: BlackFriday:PaymentMethodsController, MESSAGE: HttpGet started
+
+27.11.2018 10:14:49, TYPE: Information, WHO: BlackFriday:PaymentMethodsController, MESSAGE: HttpGet started
+
