@@ -29,6 +29,7 @@ namespace QuizMVC.Controllers
         public ActionResult Index()
         {
             string link = "http://localhost:50221/api/createSurvery";
+            LoggingFunction("get link", "Information", "QuizMVC:HomeController");
             WebClient wc = new WebClient();
 
             try { 
@@ -51,7 +52,7 @@ namespace QuizMVC.Controllers
                     {
                         buyerQuiz.Add(new QuizModel(questionId, question, answer1, answer2, answer3, answer4, answer5, answer6, answer7, category));
                         LoggingFunction("Buyer action: Buyer questionare", "Information", "QuizMVC:HomeController");
-                        Console.WriteLine("-----------------------");
+                       // Console.WriteLine("-----------------------");
                         Debug.WriteLine( "Buyer categorie");
 
                     }
@@ -59,7 +60,7 @@ namespace QuizMVC.Controllers
                     {
                         sellerQuiz.Add(new QuizModel(questionId, question, answer1, answer2, answer3, answer4, answer5, answer6, answer7, category));
                         LoggingFunction("Seller action: Seller questionare", "Information", "QuizMVC:HomeController");
-                        Console.WriteLine("-----------------------");
+                       // Console.WriteLine("-----------------------");
                         Debug.WriteLine("Seller categorie");
                     }
                     _quiz.Add(new QuizModel(questionId, question, answer1, answer2, answer3, answer4, answer5, answer6, answer7, category));
@@ -69,7 +70,7 @@ namespace QuizMVC.Controllers
 
             }
             catch (Exception ex) {
-                Console.WriteLine(link + "isn't not reachable");
+               // Console.WriteLine(link + "isn't not reachable");
                 Debug.WriteLine(link + "isn't not reachable");
                 LoggingFunction("Link:" + link+ "isn't not reachable", "Error", "QUizMVC:HomeController");
                 LoggingFunction(ex.Message,"Exception","Quiz: HomeController");
@@ -165,7 +166,7 @@ namespace QuizMVC.Controllers
             //System.IO.File.WriteAllText(@"C:\Users\mabdullah\source\Repos\IEG\answers.txt", jsonData);
             // var initialJson = System.IO.File.ReadAllText(@"C:\Users\mabdullah\source\Repos\IEG\answers.txt"");
             string anwer_json = JsonConvert.SerializeObject(_answer.ToArray());
-            Console.WriteLine("-----------------------");
+           // Console.WriteLine("-----------------------");
             Debug.WriteLine("Modell is converted to json object");
             string readValues = null;
             try
@@ -177,7 +178,7 @@ namespace QuizMVC.Controllers
 
                     System.IO.File.AppendAllText(fullPath, anwer_json);
                     LoggingFunction("Exist File: File doesn't exist and new file is created", "Warning", "QuizMVC:HomeController");
-                    Console.WriteLine("-----------------------");
+                   // Console.WriteLine("-----------------------");
                     Debug.WriteLine(fullPath + ":isn't exist and new one is created");
                 }
                 System.IO.File.AppendAllText(fileName, anwer_json);
@@ -193,7 +194,7 @@ namespace QuizMVC.Controllers
             {
                 readValues = ex.ToString();
                 LoggingFunction(ex.Message, ex.GetType().ToString(), "QuizMVC: HomeController");
-                Console.WriteLine("-----------------------");
+              //  Console.WriteLine("-----------------------");
                 Debug.WriteLine(ex.Message);
                 return View("ErrorView");
             }
@@ -202,27 +203,17 @@ namespace QuizMVC.Controllers
 
         public void LoggingFunction(string message, string typ, string who)
         {
-            //StringBuilder sb = new StringBuilder();
-            //sb.Append(message);
-            // flush every 20 seconds as you do it
-            //File.AppendAllText(filePath + "log.txt", sb.ToString());
-            //sb.Clear();
+            
             string logMessage = DateTime.Now  + ", TYPE: " + typ + ", WHO: " + who + ", MESSAGE: " + message + Environment.NewLine;
-             //StreamWriter sw = new StreamWriter(@".\log.txt", true);
-            //string path = Path.GetFullPath(@".\IEG\log.txt");
-            string logFileName = "log.txt";
-            string fullPath = System.IO.Path.GetFullPath(logFileName);
-            if (!System.IO.File.Exists(logFileName))
-            {
-                System.IO.File.AppendAllText(fullPath, logMessage);
-                LoggingFunction("Exist File: File doesn't exist and new file is created", "Warning", "QuizMVC:HomeController");
+             
+            //string startupPath = System.IO.Directory.GetCurrentDirectory();
 
-            }
-             System.IO.File.AppendAllText(logFileName, logMessage);
-            //System.IO.File.AppendAllText(@"C:\Users\mabdullah\source\Repos\IEG\log.txt", logMessage);
-            // StreamWriter sw = new StreamWriter(@"C:\Users\mabdullah\source\Repos\IEG\log.txt", append:true);
-            //sw.WriteLine(logMessage);
-            //sw.Close();
+            //string startupPath1 = Environment.CurrentDirectory;
+           // string path2 =Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            // System.IO.File.AppendAllText(path2+"\\log.txt", logMessage);
+            System.IO.StreamWriter file = new System.IO.StreamWriter("c:\\log.txt",true);
+            file.WriteLine(logMessage);
+            file.Close();
             logMessage = "";
         }
 

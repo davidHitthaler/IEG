@@ -21,6 +21,7 @@ namespace Quiz.Controllers
         {
             string mostwanted = "";
             mostwanted = calcEvaluation(liste.Get(), 2);
+            LoggingFunction("Get Evaluation", "Information", "Quiz:EvaluateController");
             return new string[] { "Please select a question-ID. URL Example: http://localhost:56482/api/evaluate/1" };
         }
         
@@ -30,6 +31,7 @@ namespace Quiz.Controllers
         {
             string mostwanted = "";
             mostwanted = calcEvaluation(liste.Get(), questionId);
+            LoggingFunction("Get Evaluation by question Id", "Information", "Quiz:EvaluateController");
             return new string[] { mostwanted };
         }
 
@@ -267,6 +269,15 @@ namespace Quiz.Controllers
             }
 
             return mostwanted;
+        }
+        public void LoggingFunction(string message, string typ, string who)
+        {
+            string logMessage = DateTime.Now + ", TYPE: " + typ + ", WHO: " + who + ", MESSAGE: " + message + Environment.NewLine;
+            System.IO.StreamWriter file = new System.IO.StreamWriter("c:\\log.txt", true);
+            file.WriteLine(logMessage);
+
+            file.Close();
+            logMessage = "";
         }
     }
 }
