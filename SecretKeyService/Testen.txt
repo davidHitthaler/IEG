@@ -1,0 +1,10 @@
+Doing:
+1. Mikroservice (SecretKeyService) hat eine Secret Key 
+2. Mikroservice (GetSecretKeyService) liest SK aus
+
+SecretKeyService und GetSecretKeyService müssen laufen:
+
+Testen: http://localhost:52421/api/GetSecretKey => gibt secret key zurück
+GetSecretKeyController schickt HTTP Get Request auf SecretKeyService (http://localhost:51999/api/SendSecretKey)
+
+SecretKeyService liest die Secret Key bei der Startup aus seinem SecretList (Rechts Klikk auf Microservice -> manage user secrets)

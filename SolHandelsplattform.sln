@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiz", "Quiz\Quiz.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizMVC", "QuizMVC\QuizMVC.csproj", "{09CED8FF-8459-40B7-9620-BEB1E6A06BCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretKeyService", "SecretKeyService\SecretKeyService.csproj", "{16F7C889-9BF5-4296-BB7C-139D291FFE50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSecretKeyService", "GetValueBySecretKey\GetSecretKeyService.csproj", "{7D528901-E72C-4428-8118-DF2C5506997D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{09CED8FF-8459-40B7-9620-BEB1E6A06BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09CED8FF-8459-40B7-9620-BEB1E6A06BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09CED8FF-8459-40B7-9620-BEB1E6A06BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F7C889-9BF5-4296-BB7C-139D291FFE50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F7C889-9BF5-4296-BB7C-139D291FFE50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F7C889-9BF5-4296-BB7C-139D291FFE50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F7C889-9BF5-4296-BB7C-139D291FFE50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D528901-E72C-4428-8118-DF2C5506997D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D528901-E72C-4428-8118-DF2C5506997D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D528901-E72C-4428-8118-DF2C5506997D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D528901-E72C-4428-8118-DF2C5506997D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
